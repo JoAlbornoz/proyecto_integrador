@@ -1,6 +1,6 @@
 # proyecto_integrador
-Instituto Superior Politécnico de Córdoba
-2024
+Instituto Superior Politécnico de Córdoba - 2024
+
 Tecnicatura Superior en Innovación con tecnologías 4.0
 
 Albornoz María Josefina
