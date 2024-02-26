@@ -1,13 +1,15 @@
 import tkinter as tk
 import os
 
+#Falta migrar la parte visual 
+
 class PantallaPrincipal:
     def __init__(self):
         self.master = tk.Tk()
         self.master.title("Pantalla Principal")
         self.master.geometry("400x200")
 
-        self.btn_opcion1 = tk.Button(self.master, text="Opción 1", command=self.abrir_opcion1)
+        self.btn_opcion1 = tk.Button(self.master, text="LISTAS", command=self.abrir_opcion1)
         self.btn_opcion1.pack()
 
         self.btn_opcion2 = tk.Button(self.master, text="ARTISTAS", command=self.abrir_opcion2)
@@ -20,6 +22,9 @@ class PantallaPrincipal:
         self.btn_opcion4.pack()
 
         self.master.mainloop()
+
+    #Tkinter tiene problemas para abrir distintas ventanas, por lo que al trabajar desde mi compu
+    # para poder visualizarlas preferí llamar a la ruta exacta de mis archivos
 
     def abrir_opcion1(self):
         print("Ventana 1 abierta")

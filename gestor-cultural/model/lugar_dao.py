@@ -3,7 +3,7 @@ import tkinter as tk
 from .conexion_db import ConexionDB
 from tkinter import messagebox
 
-#OPERACIONES Y CONSULTAS A LA BASE DE DATOS para Lugares
+#OPERACIONES Y CONSULTAS A LA BASE DE DATOS - TABLA LUGARES
 class Lugar:
     def __init__(self, nombre, tipo, direccion, capacidad):
         self.id_lugar = None

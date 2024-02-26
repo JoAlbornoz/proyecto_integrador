@@ -1,5 +1,7 @@
 import sqlite3
 
+# SE GENERAN LAS TABLAS AUTOMÁTICAMENTE AL INICIAR LA APP
+
 class ConexionDB:
     def __init__(self):
         self.basedatos = 'database/gestion_cultural.db'
@@ -38,6 +40,10 @@ class ConexionDB:
                 capacidad TEXT            
             )
         ''')
+
+    #Están mal nombradas, deberían llamarse evento_artistas y lugar_eventos, y mal ubicadas las columnas
+    #Ya que un evento tiene varios artistas, y un lugar tiene varios eventos
+    #además, falta artista_eventos, tabla donde un artista puede tener varios eventos
 
         self.cursor.execute('''
             CREATE TABLE IF NOT EXISTS artistas_eventos (

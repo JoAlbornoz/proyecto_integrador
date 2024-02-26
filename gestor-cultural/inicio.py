@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter import messagebox
 
+#Falta migrar la parte visual
+
 class Login:
     def __init__(self, master):
         self.master = master

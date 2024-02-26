@@ -3,6 +3,8 @@ import tkinter as tk
 from .conexion_db import ConexionDB
 from tkinter import messagebox
 
+#OPERACIONES Y CONSULTAS A LA BASE DE DATOS - TABLA EVENTOS + artistas_eventos y eventos_lugares
+
 class Evento:
     def __init__(self, nombre, tipo, fecha, precio, id_lugar, id_artista):
         self.id_evento = None

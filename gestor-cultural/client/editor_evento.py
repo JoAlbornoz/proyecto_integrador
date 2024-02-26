@@ -197,7 +197,6 @@ class EditorFrame(tk.Frame):
         self.tabla.heading('#3', text='Fecha')
         self.tabla.heading('#4', text='Precio')
         
-        #Se itera la lista de eventos
         for evento in self.lista_eventos:
             self.tabla.insert('', 0, text=evento[0], values =(evento[1], evento[2], evento[3], evento[4]))
 
@@ -232,10 +231,8 @@ class EditorFrame(tk.Frame):
                 self.fecha_evento = evento_seleccionado['values'][2]
                 self.precio_evento = evento_seleccionado['values'][3]
 
-                # Obtener el ID del artista desde la tabla artistas_eventos
                 id_artista_evento = obtener_id_artistas_eventos(self.id_evento)
-                
-                # Obtener el ID del lugar desde la tabla lugares_eventos
+
                 id_lugar_evento = obtener_id_eventos_lugares(self.id_evento)
 
                 self.habilitar_campos()
@@ -252,7 +249,6 @@ class EditorFrame(tk.Frame):
                 print("Artistas:", artistas)
                 print("Lugares:", lugares)
 
-                # Establecer los valores del ComboBox de artistas y lugares
                 self.artistas['values'] = [artista[1] for artista in artistas]
                 self.artistas.set([artista[1] for artista in artistas if artista[0] == id_artista_evento][0])
 

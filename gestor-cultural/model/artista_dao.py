@@ -2,6 +2,8 @@ import tkinter as tk
 from .conexion_db import ConexionDB
 from tkinter import messagebox
 
+#OPERACIONES Y CONSULTAS A LA BASE DE DATOS - TABLA ARTISTAS
+
 class Artista:
     def __init__(self, nombre, alias, campo, genero, grupo, contacto):
         self.id_artista = None
