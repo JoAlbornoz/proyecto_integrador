@@ -1,54 +1,59 @@
 import tkinter as tk
+from tkinter import Label, PhotoImage, Button
 import os
 
-#Falta migrar la parte visual 
-
-class PantallaPrincipal:
+class PantallaPrincipal(tk.Tk):
     def __init__(self):
-        self.master = tk.Tk()
-        self.master.title("Pantalla Principal")
-        self.master.geometry("400x200")
+        super().__init__()
+        self.title("Bienvenido - Gestor Cultural")
+        self.geometry("900x550")
+        self.configure(bg='purple')
+        self.create_widgets()
 
-        self.btn_opcion1 = tk.Button(self.master, text="LISTAS", command=self.abrir_opcion1)
-        self.btn_opcion1.pack()
+    def create_widgets(self):
+        frame = tk.Frame(self, bg='purple')
+        frame.pack(side='right', padx=20)
 
-        self.btn_opcion2 = tk.Button(self.master, text="ARTISTAS", command=self.abrir_opcion2)
-        self.btn_opcion2.pack()
+        imagen = PhotoImage(file='imagenes/nevado.png')
+        label_imagen = Label(self, image=imagen, bg='purple', padx=0, pady=0)
+        label_imagen.photo = imagen
+        label_imagen.pack(side='left', pady=0, padx=0, expand=tk.YES, fill=tk.Y)
 
-        self.btn_opcion3 = tk.Button(self.master, text="LUGARES", command=self.abrir_opcion3)
-        self.btn_opcion3.pack()
+        texto1 = tk.Label(frame, text='Ingrese a las listas', font=('Arial', 12), fg='white', bg='purple')
+        texto2 = tk.Label(frame, text='Ingrese a los editores', font=('Arial', 12), fg='white', bg='purple')
 
-        self.btn_opcion4 = tk.Button(self.master, text="EVENTOS", command=self.abrir_opcion4)
-        self.btn_opcion4.pack()
+        buscar_boton = Button(frame, text='Listas', width=20, height=2, font=('Arial', 15), bg='orange', fg='white', cursor='hand2')
+        artistas_boton = Button(frame, text='Artistas', width=20, height=2, font=('Arial', 15), bg='blue', fg='white', cursor='hand2', command=self.abrir_editor_artista)
+        lugares_boton = Button(frame, text='Lugares', width=20, height=2, font=('Arial', 15), bg='green', fg='white', cursor='hand2', command=self.abrir_editor_lugar)
+        eventos_boton = Button(frame, text='Eventos', width=20, height=2, font=('Arial', 15), bg='red', fg='white', cursor='hand2', command=self.abrir_editor_evento)
 
-        self.master.mainloop()
+        texto1.grid(row=0, column=1, padx=10, pady=(20))
+        buscar_boton.grid(row=1, column=1, padx=10, pady=10, sticky="e")
+        texto2.grid(row=2, column=1, padx=10, pady=(20))
+        artistas_boton.grid(row=3, column=1, padx=10, pady=(20), sticky="e")
+        lugares_boton.grid(row=4, column=1, padx=10, pady=10, sticky="e")
+        eventos_boton.grid(row=5, column=1, padx=10, pady=10, sticky="e")
 
     #Tkinter tiene problemas para abrir distintas ventanas, por lo que al trabajar desde mi compu
     # para poder visualizarlas preferí llamar a la ruta exacta de mis archivos
 
-    def abrir_opcion1(self):
-        print("Ventana 1 abierta")
-
-    def abrir_opcion2(self):
+    def abrir_editor_artista(self):
         try:
             os.system("python C:/Users/josef/proyectos/proyecto-integrador/gestor-cultural/client/editor_artista.py")
-            print("Script editor_lugar.py se está ejecutando")
+            print("Script editor_artista.py se está ejecutando")
         except Exception as e:
-            print("Error al abrir editor_lugar.py:", e)
+            print("Error al abrir editor_artista.py:", e)
 
-
-    def abrir_opcion3(self):
+    def abrir_editor_lugar(self):
         try:
             os.system("python C:/Users/josef/proyectos/proyecto-integrador/gestor-cultural/client/editor_lugar.py")
             print("Script editor_lugar.py se está ejecutando")
         except Exception as e:
             print("Error al abrir editor_lugar.py:", e)
 
-
-    def abrir_opcion4(self):
+    def abrir_editor_evento(self):
         try:
             os.system("python C:/Users/josef/proyectos/proyecto-integrador/gestor-cultural/client/editor_evento.py")
-            print("Script editor_lugar.py se está ejecutando")
+            print("Script editor_evento.py se está ejecutando")
         except Exception as e:
             print("Error al abrir editor_evento.py:", e)
-
