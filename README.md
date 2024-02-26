@@ -4,10 +4,9 @@ Instituto Superior Politécnico de Córdoba - 2024
 Tecnicatura Superior en Innovación con tecnologías 4.0
 
 Albornoz María Josefina
-Proyecto Integrador Libre – Programación Inicial y Bases de Datos
 
-
-Gestor cultural
+Proyecto Integrador Libre – Programación Inicial y Bases de Datos :
+# Gestor cultural
 
 La idea de este proyecto es poder crear un un sistema que centralice y facilite el registro - gestión - de distintos eventos culturales de la comunidad jujeña.
 
